@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.relogio {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    top: 9.5%;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    transition: 1s;
+    display: none;
+}
+
+.relogio img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    transition: 1s;
+}
+
+.cenario {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+}
+
+.contLeft {
+    width: 30%;
+    height: 1010px;
+    margin: auto;
+    border-right: 10px solid black;
+}
+
+.points {
+    text-align: center;
+    font-size: 30px;
+    padding: 1.5rem;
+    margin-top: 10px;
+}
+
+.person {
+    width: 100%;
+    margin-top: 90px;
+    transition: 0.1s;
+}
+
+.person img {
+    width: 100%;
+}
+
+.contRight {
+    width: 20%;
+    height: 1010px;
+    margin: auto;
+    border-left: 10px solid black;
+}
+
+.upgrades {
+    text-align: center;
+    margin: 40px auto;
+}
+
+.upgrades h1 {
+    margin-top: 10px;
+    font-size: 50px;
+}
+
+.itens-upgrades {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-wrap: wrap;
+    margin: 0px auto;
+}
+
+.single-upgrades {
+    width: calc(100% / 4);
+    height: 80px;
+    background-color: rebeccapurple;
+    border: 1px solid black;
+    position: relative;
+}
+
+.single-upgrades img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: contain;
+    background-position: center;
+    background-position: center;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.preco-up {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.preco-up h1 {
+    font-size: 25px;
+    font-weight: 900;
+    position: relative;
+    top: 9px;
+    z-index: 997;
+}
+
+.contCenter {
+    width: calc(100% - 30% - 20%);
+    text-align: center;
+    margin: 0px auto;
+}
+
+.contCenter h1 {
+    padding: 6rem 0px;
+    font-size: 60px;
+}
+
+.itens-storys {
+    width: 90%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-wrap: wrap;
+    margin: 50px auto;
+}
+
+.single-storys {
+    width: calc(100% / 3);
+    height: 200px;
+    border: 1px solid black;
+    transition: 1s;
+    position: relative;
+}
+
+.single-storys:hover {
+    transform: scale(1.2);
+}
+
+.single-storys img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: contain;
+    background-position: center;
+    background-position: center;
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.preco-sto {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.preco-sto h1 {
+    position: relative;
+    top: -20px;
+    z-index: 997;
+}
+
+.recusePay {
+    width: 500px;
+    height: 500px;
+    border: 10px solid black;
+    border-radius: 25%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    text-align: center;
+    display: none;
+}
+
+.close {
+    position: absolute;
+    right: 50px;
+    top: 35px;
+}
+
+.close i {
+    font-size: 50px;
+    transition: 1s;
+}
+
+.close i:hover {
+    transform: scale(1.3);
+    color: red;
+    cursor: pointer;
+}
+
+.alert {
+    position: absolute;
+    top: 110px;
+    margin: auto;
+}
+
+.alert h2 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.alert i {
+    padding-top: 2.5rem;
+    font-size: 70px;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+    .cenario {
+        flex-direction: column;
+    }
+
+    .contLeft {
+        width: 100%;
+        order: 1;
+        border-right: none;
+    }
+
+    .points {
+        text-align: center;
+        font-size: 30px;
+        padding: 2rem;
+        margin-top: 60px;
+    }
+
+    .person {
+        width: 500px;
+        margin: auto;
+    }
+
+    .person img {
+        width: 500px;
+    }
+
+    .contCenter {
+        width: 100%;
+        order: 2;
+        border-top: 10px solid black;
+        padding: 10px;
+    }
+
+    .single-storys {
+        width: calc(100% / 2);
+        height: 250px;
+        background-color: rebeccapurple;
+        border: 1px solid black;
+    }
+
+    .contRight {
+        border-left: none;
+        width: 300px;
+        height: 1800px;
+        background-color: rebeccapurple;
+        position: absolute;
+        top: 0;
+        right: 0;
+        /* display: none; */
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contLeft {
+        width: 100%;
+        order: 1;
+        border-right: none;
+    }
+
+    .points {
+        text-align: center;
+        font-size: 30px;
+        padding: 2rem;
+        margin-top: 60px;
+    }
+
+    .person {
+        width: 100%;
+        margin: auto;
+    }
+
+    .person img {
+        width: 100%;
+    }
+
+    .single-storys {
+        width: 100%;
+        height: 250px;
+        background-color: rebeccapurple;
+        border: 1px solid black;
+    }
+
+    .upgrades h1 {
+        padding-top: 20px;
+    }
+
+    #money {
+        margin-top: -50px;
+    }
+
+    .itens-upgrades {
+        margin-top: 100px;
+    }
+
+    .contRight {
+        border-left: none;
+        width: 100%;
+        height: 2400px;
+        background-color: rebeccapurple;
+        padding-top: 80px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
