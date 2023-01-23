@@ -30,7 +30,6 @@ const valueTimeClick = 2000;
 const save = () => {
   localStorage.money = formatMoney;
   localStorage.person = personClick.innerHTML;
-  localStorage.AutoClick = autoClickValue;
 };
 
 setTimeout(() => {
@@ -39,12 +38,10 @@ setTimeout(() => {
 
 const inicial = () => {
   var moneySave = localStorage.money;
-  var personImgSave = localStorage.person;
-  var SaveAutoClick = localStorage.AutoClick;
+  var personSave = localStorage.person;
   money.innerHTML = `${moneySave}$`;
   moneyUp.innerHTML = `${moneySave}$`;
-  personClick.innerHTML = `${personImgSave}`;
-  priceAutoClick.innerHTML = `${SaveAutoClick}`;
+  personClick.innerHTML = `${personSave}`;
 };
 
 inicial();
@@ -213,3 +210,4 @@ for (let up = 0; up < upgrades.length; up++) {
     }
   });
 }
+
