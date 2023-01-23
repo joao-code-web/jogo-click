@@ -23,25 +23,31 @@ var currentMoney = localStorage.money; //Variavel que mostra quanto de dinheiro 
 // Values itens(variaveis usadas para medir o preço de derteminado item)
 const valueJotaro = 10;
 const valueGrava = 10;
-var autoClickValue = localStorage.priceAutoClick;
+var autoClickValue = 10;
 const valueDoubleClick = 1500;
 const valueTimeClick = 2000;
 
 const save = () => {
   localStorage.money = formatMoney;
   localStorage.person = personClick.innerHTML;
-  localStorage.priceAutoClick = autoClickValue;
+  localStorage.AutoClick = autoClickValue;
 };
+
+setTimeout(() => {
+  save();
+}, 1000);
 
 const inicial = () => {
   var moneySave = localStorage.money;
   var personImgSave = localStorage.person;
-  var priceSaveAutoClick = localStorage.priceAutoClick;
+  var SaveAutoClick = localStorage.AutoClick;
   money.innerHTML = `${moneySave}$`;
   moneyUp.innerHTML = `${moneySave}$`;
   personClick.innerHTML = `${personImgSave}`;
-  priceAutoClick.innerHTML = ` <h1 id="autoClickPrice">${priceSaveAutoClick}$</h1>`;
+  priceAutoClick.innerHTML = `${SaveAutoClick}`;
 };
+
+inicial();
 
 const systemMoney = (formatMoney) => {
   money.innerHTML = `${formatMoney}$`;
@@ -94,7 +100,7 @@ const autoClick = (moneyPayUp) => {
   if (moneyPayUp >= autoClickValue) {
     currentMoney = moneyPayUp - autoClickValue;
     autoClickValue = autoClickValue * 1.5;
-    priceAutoClick.innerHTML = ` <h1 id="autoClickPrice">${autoClickValue}$</h1>`;
+    priceAutoClick.innerHTML = `${autoClickValue}`;
     personClick.click();
     setInterval(() => {
       personClick.click();
@@ -137,8 +143,6 @@ personClick.addEventListener("click", () => {
   systemMoney(formatMoney);
   save();
 });
-
-inicial();
 
 for (let sto = 0; sto < story.length; sto++) {
   story[sto].addEventListener("click", () => {
